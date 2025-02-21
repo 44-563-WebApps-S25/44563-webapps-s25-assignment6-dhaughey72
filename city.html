@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <title>City Game</title>
+ 
+<body>
+
+  <header>City game by Dakotah Haughey</header>
+
+  <h2>Getting input with radio buttons and checkboxes</h2>
+
+      <form>
+        <input type="password" id="hiddenCity" value="San Diego">
+        <label for="hiddenCity">Where in the world</label></br>
+      
+        <input type="text" id="cityGuess">
+        <label for="cityGuess">Guess the city</label></br>
+      
+        <button type="btn" onclick="checkCity()">Check the guess</button>
+        <p id="answer">oops/found</p>
+      </form>
+
+      <script>
+        var oops = 0;
+        var found = 0;
+
+        function checkCity() {
+          event.preventDefault();
+          console.log("Getting input");
+          var city = document.getElementById("hiddenCity").value;
+          var guess = document.getElementById("cityGuess").value;
+
+          var output = document.getElementById("answer");
+
+          if (city === guess) {
+            found += 1;
+            alert("GotCha");
+          }
+          else {
+            oops += 1;
+            alert("Awe");
+          }
+
+          output.innerHTML = "Found: " + found + " Oops: " + oops;
+        }
+      </script>
+      
+      <form>
+        <input type="checkbox" id="cb1_cheese" name="topping1"   
+          value="cheese" checked>
+        <label for="cb1_cheese">I want cheese</label></br>
+      
+        <input type="checkbox" id="cb1_olive" name="topping2" 
+           value="olive">
+        <label for="cb1_olive">I want olives</label></br>
+      
+        <input type="checkbox" id="cb1_onion" name="topping3"   
+           value="onion" checked>
+        <label for="cb1_onion">I want onions</label></br>
+
+        <input type="button" onclick="resolveCheck()" value="Get values from check boxes">
+      </form>
+      
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+function resolveCheck() {
+    console.log("Getting input")
+    cheese = document.getElementById("cb1_cheese").checked
+    olives = document.getElementById("cb1_olive").checked
+    onions = document.getElementById("cb1_onion").checked
+    confirmed = confirm("Are these the values? "+cheese+" and "+olives+" and "+onions)
+    
+    out = document.getElementById("result")
+    if(confirmed){
+        out.innerHTML = "Values were confirmed"
+    } else {
+        out.innerHTML = "Values were not confirmed"
+    }
+}
+
+function resolveRadio() {
+    console.log("Getting input")
+    redOpt = document.getElementById("rg1_red").checked
+    blueOpt = document.getElementById("rg1_blue").checked
+    greenOpt = document.getElementById("rg1_green").checked
+    confirmed = confirm("Are these the values? "+redOpt+" and "+blueOpt+" and "+greenOpt)
+    
+    out = document.getElementById("result")
+    if(confirmed){
+        out.innerHTML = "Values were confirmed"
+    } else {
+        out.innerHTML = "Values were not confirmed"
+    }
+}
+
+</script>
+
+</body>
+</html> 
