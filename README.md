@@ -4,3 +4,5 @@ Introduction to Java Script and DOM
 
 Hosted At:
 https://github.com/44-563-WebApps-S25/44563-webapps-s25-assignment6-dhaughey72/blob/ec3cdc2b73f83888ea3c5b3d5fa70c91a1bf5bbe/city.html
+
+https://github.com/44-563-WebApps-S25/44563-webapps-s25-assignment6-dhaughey72/blob/a156f3d9b5085e568127a11610dd398a3c6cf8a8/dinner.html
