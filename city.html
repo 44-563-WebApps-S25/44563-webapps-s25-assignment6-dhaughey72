@@ -44,58 +44,33 @@
         }
       </script>
       
-      <form>
-        <input type="checkbox" id="cb1_cheese" name="topping1"   
-          value="cheese" checked>
-        <label for="cb1_cheese">I want cheese</label></br>
-      
-        <input type="checkbox" id="cb1_olive" name="topping2" 
-           value="olive">
-        <label for="cb1_olive">I want olives</label></br>
-      
-        <input type="checkbox" id="cb1_onion" name="topping3"   
-           value="onion" checked>
-        <label for="cb1_onion">I want onions</label></br>
+      <div>
 
-        <input type="button" onclick="resolveCheck()" value="Get values from check boxes">
-      </form>
-      
+        <img id="petpic" src="giraffe.png" alt="giraffe" width="150" height="150" onclick="updatePic()">
 
+      </div>
 
-<p id="result">This text will be replaced </p>
+      <script>
+        var usePic = 1;
+        const petpic = document.getElementById("petpic");
 
-<script> 
-function resolveCheck() {
-    console.log("Getting input")
-    cheese = document.getElementById("cb1_cheese").checked
-    olives = document.getElementById("cb1_olive").checked
-    onions = document.getElementById("cb1_onion").checked
-    confirmed = confirm("Are these the values? "+cheese+" and "+olives+" and "+onions)
-    
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
-    } else {
-        out.innerHTML = "Values were not confirmed"
-    }
-}
-
-function resolveRadio() {
-    console.log("Getting input")
-    redOpt = document.getElementById("rg1_red").checked
-    blueOpt = document.getElementById("rg1_blue").checked
-    greenOpt = document.getElementById("rg1_green").checked
-    confirmed = confirm("Are these the values? "+redOpt+" and "+blueOpt+" and "+greenOpt)
-    
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
-    } else {
-        out.innerHTML = "Values were not confirmed"
-    }
-}
-
-</script>
+        function updatePic() {
+          switch (usePic) {
+            case 1:
+              petpic.src = "giraffe.png";
+              usePic += 1;
+              break;
+            case 2:
+              petpic.src = "hawk.png";
+              usePic += 1;
+              break;
+            case 3:
+              petpic.src = "yak.png";
+              usePic = 1;
+              break;
+          }
+        }
+      </script>
 
 </body>
 </html> 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cost of Letter</title>
+</head>
+<body>
+
+    <header>Dakotah Haughey: Message Cost</header>
+<h2>Getting input</h2>
+
+<form>
+    <label for="basicprice">Enter cost per letter</label>
+    <input id="basicprice" type="number" value="0.50">
+
+    <label for="breakAt">Enter the length needed for the discount</label>
+    <input id="breakAt" type="number" value="9">
+
+    <label for="discount">Enter the discount percent</label>
+    <input id="discount" type="number" value="10">
+
+    <button type="button" onclick="amounts()">Show total</button>
+    <p id="theAmounts">Total will be shown here</p>
+</form>
+
+<script>
+    function amounts() {
+        var basicprice = parseFloat(document.getElementById("basicprice").value);
+        var breakAt = parseInt(document.getElementById("breakAt").value);
+        var discount = parseInt(document.getElementById("discount").value) / 100;
+
+        var myResults = "";
+
+        for(size = breakAt - 3; size <= breakAt + 3; size++) {
+            if (size < breakAt) {
+                myResults +=("size " + size + " is " + size * basicprice + " ");
+            }
+            else {
+                var discountprice = (size * basicprice) - (basicprice * discount);
+                myResults += ("size " + size + " is " + discountprice + " ");
+            }
+        }
+
+        var out = document.getElementById("theAmounts");
+        out.innerHTML = "Totals are: " + myResults;
+    }
+    
+</script>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+function resolveForm (){
+    console.log("Getting form values")
+    age = document.getElementById("form1_age").value
+    nick = document.getElementById("form1_nick").value
+    confirmed = confirm("Are these the values? "+age+" and "+nick)
+    
+    out = document.getElementById("result")
+    if(confirmed){
+        out.innerHTML = "Values were confirmed"
+    } else {
+        out.innerHTML = "Values were not confirmed"
+    }
+}
+</script>
+
+</body>
+</html> 
