@@ -23,6 +23,17 @@
         <p id="results"></p>
     </form>
 
+    <form>
+        <label for="main">Enter main dish</label>
+        <input id="main" type="text" value="Butter Chicken">
+
+        <label for="dessert">Enter dessert</label>
+        <input id="dessert" type="text">
+
+        <button type="button" onclick="updateDinner()">Update the dinner</button>
+        <p id="dinner"></p>
+    </form>
+
     <script>
         var my_dinner = {};
 
@@ -36,6 +47,17 @@
             my_dinner = wine + " " + out + " " + candle;
 
             var out = document.getElementById("results");
+            out.innerHTML = my_dinner;
+
+        }
+
+        function updateDinner() {
+            var main = document.getElementById("main").value;
+            var dessert = document.getElementById("dessert").value;
+
+            my_dinner = main + " " + dessert;
+
+            var out = document.getElementById("dinner");
             out.innerHTML = my_dinner;
 
         }
