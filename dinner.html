@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <title>assignment 6 - plans dinner</title>
+</head>
+<html>
+ 
+<body>
+
+    <header>Dakotah Haughey: plans dinner</header>
+    <h2>Getting input</h2>
+
+    <form>
+        <label for="wine">Serve wine</label>
+        <input id="wine" type="checkbox" value="true">
+
+        <label for="out">Eat outside</label>
+        <input id="out" type="checkbox" value="true">
+
+        <label for="candle">Light candles</label>
+        <input id="candle" type="checkbox" value="false">
+
+        <button type="button" onclick="choices()">Dinner Choices</button>
+        <p id="results"></p>
+    </form>
+
+    <script>
+        var my_dinner = {};
+
+        function choices() {
+            my_dinner = {};
+
+            var wine = document.getElementById("wine").checked;
+            var out = document.getElementById("out").checked;
+            var candle = document.getElementById("candle").checked;
+
+            my_dinner = wine + " " + out + " " + candle;
+
+            var out = document.getElementById("results");
+            out.innerHTML = my_dinner;
+
+        }
+    </script>
+
+
+
+
+</body>
+</html> 
