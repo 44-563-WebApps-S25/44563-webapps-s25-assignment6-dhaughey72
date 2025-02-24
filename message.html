@@ -46,24 +46,44 @@
     
 </script>
 
+<form>
+    <label for="product">product</label>
+    <input id="product" type="radio" onclick="chooseOp()" value="times">
 
-<p id="result">This text will be replaced </p>
+    <label for="sum">sum</label>
+    <input id="sum" type="radio" onclick="chooseOp()" value="add">
 
-<script> 
+    <label for="mod">mod</label>
+    <input id="mod" type="radio" onclick="chooseOp()" value="mod">
 
-function resolveForm (){
-    console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
-    
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
-    } else {
-        out.innerHTML = "Values were not confirmed"
+    <p id="results"></p>
+</form>
+
+<script>
+    function chooseOp() {
+        var price = parseFloat(document.getElementById("basicprice").value);
+        var breakAt = parseInt(document.getElementById("breakAt").value);
+
+        var product = document.getElementById("product").checked;
+        var sum = document.getElementById("sum").checked;
+        var mod = document.getElementById("mod").checked;
+
+        var theResults = "";
+        var out = document.getElementById("results");
+
+        if (product) {
+            out.innerHTML = price + " times " + breakAt + " is " + (price * breakAt);
+        }
+
+        if (sum) {
+            out.innerHTML = price + " plus " + breakAt + " is " + (price + breakAt);
+        }
+
+        if (mod) {
+            out.innerHTML = price + " mod " + breakAt + " is " + (price % breakAt);
+        }
+
     }
-}
 </script>
 
 </body>
